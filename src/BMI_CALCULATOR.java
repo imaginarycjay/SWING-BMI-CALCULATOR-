@@ -15,21 +15,20 @@ public class BMI_CALCULATOR extends JFrame implements ActionListener, KeyListene
    DecimalFormat df;
 
    BMI_CALCULATOR(){
-      df = new DecimalFormat("#.##"); //pattern nito para sa decimals blah blah blah
+      df = new DecimalFormat("#.##");
       setLayout(null);
-      //mga attributes ng result text field
+
       result = new JTextField();
       result.setBounds(30, 50, 268, 60);
       result.setEditable(false);
-      result.setFocusable(false); //para mawala yung weird blinking cursor
+      result.setFocusable(false);
       result.setBorder(new LineBorder(Color.white, 0, true));
       result.setBackground(new Color(50, 50, 50));
-      result.setForeground(Color.white); //to set the text color sa loob ng text field to while
+      result.setForeground(Color.white);
       result.setFont(new Font("Arial", Font.BOLD, 24));
       result.setHorizontalAlignment(JTextField.CENTER);
-      this.add(result); //i-add to frame
+      this.add(result);
 
-      //equals attributes at iba pa, basta yun na yun.
       equalSign = new JLabel("=");
       equalSign.setFont(new Font("Arial", Font.PLAIN, 42));
       equalSign.setBounds(150,100, 100, 100);
@@ -90,7 +89,7 @@ public class BMI_CALCULATOR extends JFrame implements ActionListener, KeyListene
       this.setVisible(true);
       this.setSize(345, 500);
       this.setResizable(false);
-      this.getContentPane().setBackground(new Color(34, 33, 38)); //bg color to gray
+      this.getContentPane().setBackground(new Color(34, 33, 38));
    }
 
    @Override
@@ -129,9 +128,6 @@ public class BMI_CALCULATOR extends JFrame implements ActionListener, KeyListene
          String formattedBMI = df.format(finalBMI); //formats and coverts double to string
          result.setText(formattedBMI + " BMI");
 
-/*         if (finalBMI < 18) {
-            result.setText("you are underweight");
-         }*/
       } catch (NumberFormatException e) {
          result.setText("Invalid Input!");
       }
@@ -141,9 +137,6 @@ public class BMI_CALCULATOR extends JFrame implements ActionListener, KeyListene
       result.setText("");
       weight.setText("");
       height.setText("");
-   }
-
-   public void comment(){
    }
 
    public static void main(String[] args) {
